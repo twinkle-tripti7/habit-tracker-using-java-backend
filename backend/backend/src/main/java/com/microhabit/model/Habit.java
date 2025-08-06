@@ -2,6 +2,8 @@ package com.microhabit.model;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;
+import java.util.HashMap;
+import java.util.Map;
 
 @Entity
 @Table(name = "habits")
@@ -13,19 +15,22 @@ public class Habit {
 
     private String title;
     private String description;
-    private boolean completed;
 
     @Column(name = "created_date")
     private LocalDate createdDate;
 
-    // Constructors
+    @ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(name = "habit_completion", joinColumns = @JoinColumn(name = "habit_id"))
+    @MapKeyColumn(name = "date")
+    @Column(name = "completed")
+    private Map<String, Boolean> completionMap = new HashMap<>();
+
     public Habit() {
     }
 
     public Habit(String title, String description, boolean completed) {
         this.title = title;
         this.description = description;
-        this.completed = completed;
     }
 
     // Getters and Setters
@@ -54,20 +59,20 @@ public class Habit {
         this.description = description;
     }
 
-    public boolean isCompleted() {
-        return completed;
-    }
-
-    public void setCompleted(boolean completed) {
-        this.completed = completed;
-    }
-
     public LocalDate getCreatedDate() {
         return createdDate;
     }
 
     public void setCreatedDate(LocalDate createdDate) {
         this.createdDate = createdDate;
+    }
+
+    public Map<String, Boolean> getCompletionMap() {
+        return completionMap;
+    }
+
+    public void setCompletionMap(Map<String, Boolean> completionMap) {
+        this.completionMap = completionMap;
     }
 
 }
