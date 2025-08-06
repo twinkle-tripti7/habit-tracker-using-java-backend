@@ -32,6 +32,7 @@ A habit tracking web app that helps you build consistent micro-habits by logging
 <img width="598" height="446" alt="image" src="https://github.com/user-attachments/assets/b07456af-ea0b-490f-aedc-601101253ccc" />
 <img width="184" height="429" alt="image" src="https://github.com/user-attachments/assets/b00f00e7-058f-476b-86b8-395db611eb9f" />
 <img width="162" height="437" alt="image" src="https://github.com/user-attachments/assets/8e22c70b-0df3-45d1-8e8f-74d96939f7d3" />
+<img width="949" height="403" alt="image" src="https://github.com/user-attachments/assets/8a5b1a11-5b5f-46ec-9a80-1b60140d500b" />
 
 
 ## 📈 Monthly Summary Example
